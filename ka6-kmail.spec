@@ -171,11 +171,19 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/dbus-1/interfaces/org.kde.kmail.kmail.xml
 %{_datadir}/dbus-1/interfaces/org.kde.kmail.kmailpart.xml
 %{_datadir}/dbus-1/services/org.kde.kmail.service
+%dir %{_iconsdir}/breeze-dark/16x16
+%dir %{_iconsdir}/breeze-dark/16x16/emblems
+%dir %{_iconsdir}/breeze-dark/22x22
+%dir %{_iconsdir}/breeze-dark/22x22/emblems
+%dir %{_iconsdir}/breeze-dark/8x8
+%dir %{_iconsdir}/breeze-dark/8x8/emblems
 %{_iconsdir}/breeze-dark/*x*/emblems/*.svg
 %{_iconsdir}/hicolor/*x*/apps/*.png
 %{_iconsdir}/hicolor/*x*/emblems/*.svg
 %{_iconsdir}/hicolor/*x*/actions/*.png
 %{_iconsdir}/hicolor/scalable/apps/kmail.svg
+%dir %{_datadir}/kmail2
+%dir %{_datadir}/kmail2/pics
 %{_datadir}/kmail2/pics/pgp-keys.png
 %{_datadir}/knotifications6/akonadi_archivemail_agent.notifyrc
 %{_datadir}/knotifications6/akonadi_followupreminder_agent.notifyrc
