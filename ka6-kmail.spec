@@ -8,7 +8,7 @@
 Summary:	kmail
 Name:		ka6-%{kaname}
 Version:	24.08.2
-Release:	2
+Release:	3
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
@@ -143,6 +143,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libmailfilteragentprivate.so.*.*
 %ghost %{_libdir}/libmailfilteragentprivate.so.6
 %attr(755,root,root) %{_libdir}/qt6/plugins/kmailpart.so
+%dir %{_libdir}/qt6/plugins/pim6/akonadi/config
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/akonadi/config/archivemailagentconfig.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/akonadi/config/followupreminderagentconfig.so
 %dir %{_libdir}/qt6/plugins/pim6/kcms/kmail
@@ -152,6 +153,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kcms/kmail/kcm_kmail_misc.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kcms/kmail/kcm_kmail_plugins.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kcms/kmail/kcm_kmail_security.so
+%dir %{_libdir}/qt6/plugins/pim6/kcms/summary
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kcms/summary/kcmkmailsummary.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kcms/summary/kcmkontactsummary.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kontact/kontact_kmailplugin.so
