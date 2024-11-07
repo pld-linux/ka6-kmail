@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	24.08.2
+%define		kdeappsver	24.08.3
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		kmail
 Summary:	kmail
 Name:		ka6-%{kaname}
-Version:	24.08.2
-Release:	3
+Version:	24.08.3
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	48f3e68ce80b127c2e5abfa267123282
+# Source0-md5:	72a849627e28825679b4ae6efddbe0b3
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6DBus-devel
@@ -82,6 +82,7 @@ BuildRequires:	shared-mime-info
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 ExcludeArch:	x32 i686
+Requires:	%{name}-data = %{version}-%{release}
 Obsoletes:	ka5-%{kaname} < %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -92,6 +93,19 @@ information manager from KDE.
 %description -l pl.UTF-8
 KMail jest komponentem poczty Kontaktu, zintegrowanego menadżera
 informacji osobistej dla KDE.
+
+%package data
+Summary:	Data files for %{kaname}
+Summary(pl.UTF-8):	Dane dla %{kaname}
+Group:		X11/Applications
+Obsoletes:	ka5-%{kaname}-data < %{version}
+BuildArch:	noarch
+
+%description data
+Data files for %{kaname}.
+
+%description data -l pl.UTF-8
+Dane dla %{kaname}.
 
 %prep
 %setup -q -n %{kaname}-%{version}
@@ -127,7 +141,7 @@ rm -rf $RPM_BUILD_ROOT
 %update_icon_cache hicolor
 /sbin/ldconfig
 
-%files -f %{kaname}.lang
+%files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/akonadi_archivemail_agent
 %attr(755,root,root) %{_bindir}/akonadi_followupreminder_agent
@@ -158,6 +172,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kcms/summary/kcmkontactsummary.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kontact/kontact_kmailplugin.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kontact/kontact_summaryplugin.so
+
+%files data -f %{kaname}.lang
+%defattr(644,root,root,755)
 %{_datadir}/akonadi/agents/archivemailagent.desktop
 %{_datadir}/akonadi/agents/followupreminder.desktop
 %{_datadir}/akonadi/agents/mailfilteragent.desktop
