@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	24.12.3
+%define		kdeappsver	25.04.0
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		kmail
 Summary:	kmail
 Name:		ka6-%{kaname}
-Version:	24.12.3
+Version:	25.04.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	6e2ce5787829b946fb478994fbb86349
+# Source0-md5:	d9e3ac259366711679fa512605a0e70d
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6DBus-devel
@@ -162,6 +162,7 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_libdir}/qt6/plugins/pim6/akonadi/config
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/akonadi/config/archivemailagentconfig.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/akonadi/config/followupreminderagentconfig.so
+%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/akonadi/config/sendlateragentconfig.so
 %dir %{_libdir}/qt6/plugins/pim6/kcms/kmail
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kcms/kmail/kcm_kmail_accounts.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kcms/kmail/kcm_kmail_appearance.so
