@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	25.08.2
+%define		kdeappsver	25.08.3
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		kmail
 Summary:	kmail
 Name:		ka6-%{kaname}
-Version:	25.08.2
-Release:	2
+Version:	25.08.3
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	ca20800563768de030587b4cfefe7ee5
+# Source0-md5:	a85bb5f48ff860db1af93ef21916f281
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6DBus-devel
@@ -163,27 +163,27 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/kmail
 %attr(755,root,root) %{_bindir}/kmail-refresh-settings
 %attr(755,root,root) %{_bindir}/ktnef
-%attr(755,root,root) %{_libdir}/libkmailprivate.so.*.*
+%{_libdir}/libkmailprivate.so.*.*
 %ghost %{_libdir}/libkmailprivate.so.6
-%attr(755,root,root) %{_libdir}/libmailfilteragentprivate.so.*.*
+%{_libdir}/libmailfilteragentprivate.so.*.*
 %ghost %{_libdir}/libmailfilteragentprivate.so.6
-%attr(755,root,root) %{_libdir}/qt6/plugins/kmailpart.so
+%{_libdir}/qt6/plugins/kmailpart.so
 %dir %{_libdir}/qt6/plugins/pim6/akonadi/config
-%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/akonadi/config/archivemailagentconfig.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/akonadi/config/followupreminderagentconfig.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/akonadi/config/sendlateragentconfig.so
+%{_libdir}/qt6/plugins/pim6/akonadi/config/archivemailagentconfig.so
+%{_libdir}/qt6/plugins/pim6/akonadi/config/followupreminderagentconfig.so
+%{_libdir}/qt6/plugins/pim6/akonadi/config/sendlateragentconfig.so
 %dir %{_libdir}/qt6/plugins/pim6/kcms/kmail
-%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kcms/kmail/kcm_kmail_accounts.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kcms/kmail/kcm_kmail_appearance.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kcms/kmail/kcm_kmail_composer.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kcms/kmail/kcm_kmail_misc.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kcms/kmail/kcm_kmail_plugins.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kcms/kmail/kcm_kmail_security.so
+%{_libdir}/qt6/plugins/pim6/kcms/kmail/kcm_kmail_accounts.so
+%{_libdir}/qt6/plugins/pim6/kcms/kmail/kcm_kmail_appearance.so
+%{_libdir}/qt6/plugins/pim6/kcms/kmail/kcm_kmail_composer.so
+%{_libdir}/qt6/plugins/pim6/kcms/kmail/kcm_kmail_misc.so
+%{_libdir}/qt6/plugins/pim6/kcms/kmail/kcm_kmail_plugins.so
+%{_libdir}/qt6/plugins/pim6/kcms/kmail/kcm_kmail_security.so
 %dir %{_libdir}/qt6/plugins/pim6/kcms/summary
-%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kcms/summary/kcmkmailsummary.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kcms/summary/kcmkontactsummary.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kontact/kontact_kmailplugin.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/pim6/kontact/kontact_summaryplugin.so
+%{_libdir}/qt6/plugins/pim6/kcms/summary/kcmkmailsummary.so
+%{_libdir}/qt6/plugins/pim6/kcms/summary/kcmkontactsummary.so
+%{_libdir}/qt6/plugins/pim6/kontact/kontact_kmailplugin.so
+%{_libdir}/qt6/plugins/pim6/kontact/kontact_summaryplugin.so
 
 %files data -f %{kaname}.lang
 %defattr(644,root,root,755)
