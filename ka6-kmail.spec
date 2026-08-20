@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	26.04.3
-%define		kframever	5.94.0
+%define		kdeappsver	26.08.0
+%define		kframever	6.29.0
 %define		qtver		5.15.2
 %define		kaname		kmail
 Summary:	kmail
 Name:		ka6-%{kaname}
-Version:	26.04.3
+Version:	26.08.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	48849bd18a0215716f31650fdaf5e68f
+# Source0-md5:	7d41518fa00c28a4cc3377769546d3c7
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6DBus-devel
@@ -37,7 +37,6 @@ BuildRequires:	ka6-kcalutils-devel >= %{kdeappsver}
 BuildRequires:	ka6-kidentitymanagement-devel >= %{kdeappsver}
 BuildRequires:	ka6-kldap-devel >= %{kdeappsver}
 BuildRequires:	ka6-kmailtransport-devel >= %{kdeappsver}
-BuildRequires:	ka6-kmime-devel >= %{kdeappsver}
 BuildRequires:	ka6-kontactinterface-devel >= %{kdeappsver}
 BuildRequires:	ka6-kpimtextedit-devel >= %{kdeappsver}
 BuildRequires:	ka6-ktnef-devel >= %{kdeappsver}
@@ -66,6 +65,7 @@ BuildRequires:	kf6-kiconthemes-devel >= %{kframever}
 BuildRequires:	kf6-kio-devel >= %{kframever}
 BuildRequires:	kf6-kitemviews-devel >= %{kframever}
 BuildRequires:	kf6-kjobwidgets-devel >= %{kframever}
+BuildRequires:	kf6-kmime-devel >= %{kframever}
 BuildRequires:	kf6-knotifications-devel >= %{kframever}
 BuildRequires:	kf6-knotifyconfig-devel >= %{kframever}
 BuildRequires:	kf6-kparts-devel >= %{kframever}
@@ -222,6 +222,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/knotifications6/akonadi_mailmerge_agent.notifyrc
 %{_datadir}/knotifications6/akonadi_sendlater_agent.notifyrc
 %{_datadir}/knotifications6/kmail2.notifyrc
+%{_datadir}/knotifications6/kontact.notifyrc
 %{_datadir}/metainfo/org.kde.kmail2.appdata.xml
 %{_datadir}/qlogging-categories6/kmail.categories
 %{_datadir}/qlogging-categories6/kmail.renamecategories
